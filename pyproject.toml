@@ -1,0 +1,22 @@
+[project]
+name = "context-1-harness-workspace"
+version = "0.1.0"
+description = "Miniature rebuild of Chroma's Context-1 agent harness plus an MCP embeddings engine"
+requires-python = ">=3.11"
+dependencies = [
+    "context1-engine",
+    "context1-harness",
+]
+
+[tool.uv.workspace]
+members = ["engine", "harness"]
+
+[tool.uv.sources]
+context1-engine = { workspace = true }
+context1-harness = { workspace = true }
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

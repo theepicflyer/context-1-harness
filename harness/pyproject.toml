@@ -1,0 +1,17 @@
+[project]
+name = "context1-harness"
+version = "0.1.0"
+description = "Miniature rebuild of Chroma's Context-1 agent harness: search agent loop with token budgets and context pruning"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.40",
+    "mcp>=1.9",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+context1 = "context1_harness.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
